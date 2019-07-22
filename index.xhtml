@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    
+    <h:head>
+        <title>Principal</title>
+    </h:head>
+    <h:body>
+       <h:form>  
+    <p:growl id="messages"/>
+ 
+    <p:menubar>
+         <p:submenu label="Consulta" icon="pi pi-pencil">
+            <p:menuitem value="Realizar una Consulta" url="http://localhost:8080/ProyectoIntegrador/consultar.xhtml" icon="pi pi-angle-double-left" />
+        </p:submenu>
+ 
+        <p:submenu label="Edit" icon="pi pi-pencil">
+            <p:menuitem value="Undo" url="#" icon="pi pi-angle-double-left" />
+            <p:menuitem value="Redo" url="#" icon="pi pi-angle-double-right" />
+        </p:submenu>
+ 
+        <p:submenu label="Help" icon="pi pi-question">
+            <p:menuitem value="Contents" url="#" />
+        </p:submenu>
+ 
+        <p:submenu label="Actions" icon="pi pi-cog">
+            <p:submenu label="Ajax" icon="pi pi-refresh">
+                <p:menuitem value="Save" action="#{menuView.save}" icon="pi pi-save" update="messages"/>
+                <p:menuitem value="Update" action="#{menuView.update}" icon="pi pi-refresh" update="messages"/>
+            </p:submenu>
+            <p:submenu label="Non-Ajax" icon="pi pi-clone">
+                <p:menuitem value="Delete" action="#{menuView.delete}" icon="pi pi-times" update="messages" ajax="false"/>
+            </p:submenu>
+        </p:submenu>
+ 
+        <p:menuitem value="Quit" url="http://www.primefaces.org" icon="pi pi-times" />
+ 
+        <f:facet name="options">
+            <p:inputText style="margin:1px 10px 1px 1px;" placeholder="Search"/>
+            <p:commandButton type="button" value="Iniciar Sesion" icon="pi pi-home" onclick="location.href='iniciosesion.xhtml'"/>
+            <p:commandButton type="button" value="Registrarse" icon="pi pi-home" onclick="location.href='registro.xhtml'"/>
+        </f:facet>
+    </p:menubar>
+</h:form>
+        <h:form>    
+ 
+ <h:panelGrid columns="2" id="matchGrid" cellpadding="5"> 
+   <h3>Usuario</h3>
+   <span class="ui-float-label">
+       <p:inputText id="float-input" value="#{basicView.text}" />
+      
+   </span>
+   <span class="ui-float-label">
+  <h3>Contraseña</h3>
+        <p:password id="pwd2" value="#{passwordView.password5}" label="Password 2" required="true" />
+          </span>
+  </h:panelGrid>
+            <p:commandButton type="button" value="Ingresar" icon="pi pi-home" onclick="location.href='iniciosesion.xhtml'"/><br></br><br></br>
+              <p:commandButton action="#{consultab.getVec()}" value="Consultar"/>
+                            
+        </h:form>
+
+         <p:dataTable var="car" value="#{consultab.vec}"
+                      selection="#{consultab.cons}"
+                                 selectionMode="single"  rowKey="#{car}" >
+                        <p:ajax event="rowSelect" />
+    <p:column headerText="Id">
+        <h:outputText value="#{car.totalmuj}" />
+    </p:column>
+ 
+    <p:column headerText="Year">
+        <h:outputText value="#{car.descrippro}" />
+    </p:column>
+ 
+    <p:column headerText="Brand">
+        <h:outputText value="#{car.descripreg}" />
+    </p:column>
+ 
+    <p:column headerText="Color">
+        <h:outputText value="#{car.tipof}" />
+    </p:column>
+                        
+                          
+
+</p:dataTable>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+     
+ 
+</h:body>
+</html>
+

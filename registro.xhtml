@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Registro</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <h1>Registro de Persona </h1>
+        <h:form>
+       <table>
+            <tr>
+             <label>Identificacion</label>
+            <h:inputText value="#{personaController.identificacion}"/>
+            </tr>
+             <tr>
+             <label>Nombres</label>
+	<h:inputText value="#{personaController.nombre}" />
+            </tr>
+             <tr>
+	<label>Apellidos</label>
+	<h:inputText value="#{personaController.apellido}" />
+        </tr>
+            <tr>
+	<label>AÃ±o de Nacimiento</label>
+	<h:selectOneMenu value="#{personaController.anioNacimiento}">
+		<f:selectItem itemValue="#{null}" itemLabel=".. Seleccione"/>
+		<f:selectItems value="#{personaController.anios}"/>
+	</h:selectOneMenu>
+        </tr>
+            <tr>
+	<label>Mes de Nacimiento</label>
+	<h:selectOneMenu value="#{personaController.mesNacimiento}">
+		<f:selectItem itemValue="#{null}" itemLabel=".. Seleccione"/>
+		<f:selectItems value="#{personaController.mes}"/>
+	</h:selectOneMenu>
+                    </tr>
+            <tr>
+
+	<label>Dia de Nacimiento</label>
+	<h:inputText value="#{personaController.dia}" />
+                    </tr>
+            <tr>
+
+	<label>Signo: </label>
+	<h:outputText value="#{personaController.signo}" />
+                    </tr>
+            <tr>
+
+        <label>Estatura</label>
+	<h:inputText value="#{personaController.estatura}" />
+                    </tr>
+            <tr>
+
+        <label>Peso</label>
+	<h:inputText value="#{personaController.peso}" />
+                    </tr>
+            <tr>
+
+        <label>Etnia</label>
+	<h:inputText value="#{personaController.etnia}" />
+                    </tr>
+            <tr>
+
+        <label>Sexo</label>
+	<h:inputText value="#{personaController.sexo}" />
+                    </tr>
+            <tr>
+
+        <label>Tipo de Sangre</label>
+	<h:inputText value="#{personaController.tSangre}" />
+                    </tr>
+            <tr>
+
+        <label>Estado Civil</label>
+	<h:inputText value="#{personaController.esCivil}" />
+                    </tr>
+
+	
+        </table>
+
+        </h:form>
+    </h:body>
+</html>
