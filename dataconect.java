@@ -14,9 +14,8 @@ public class dataconect {
 		try {
 			Class.forName("org.postgresql.Driver");
 			Connection con = DriverManager.getConnection(
-					"jdbc:postgresql://localhost:5432/proyecto", "postgres", "1234");
-                        System.out.println("********************************Exitosa**********************************");
-                          
+					"jdbc:postgresql://localhost:5433/basepro", "postgres", "1234");
+                       
 			return con;
 		} catch (Exception ex) {
 			System.out.println("Database.getConnection() Error -->"
