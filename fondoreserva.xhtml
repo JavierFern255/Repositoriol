@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Consulta Aquileres</title>
+    </h:head>
+    <h:body>
+        
+        <h:form style="width:500px;">
+                    <p:menubar>
+                        <p:menuitem action="/admin" value="Administrador"></p:menuitem>
+                        <p:menuitem action="/EventosInscritos" value="Eventos"></p:menuitem>
+                        <p:menuitem action="/registro" value="Registrar"></p:menuitem>
+                         <p:menuitem action="#{login.logout}" value="Salir"></p:menuitem>
+                        
+                    </p:menubar>
+</h:form>
+         <p:panel header="Fondos de reserva por Servicios segun la cantidad de Hombres" >
+        <h:form>
+            
+            <p:dataTable value="#{datosfondo.fonSerSH}" var="tabla" editable="true">
+                        <p:column headerText="Codigo de Region">
+                            #{tabla.fonhomregion}
+                        </p:column>
+                        <p:column headerText="Region" >
+                            #{tabla.fonhomservicio}
+                        </p:column>
+                <p:column headerText="Servicio- Servicios y otros">
+                            #{tabla.fonhomtotals}
+                        </p:column>
+                <p:column headerText="Suma de Alquieres" >
+                            #{tabla.fonhomreservas}
+                        </p:column>
+                    </p:dataTable>
+
+        </h:form>
+            </p:panel>
+        
+        <p:panel header="Fondos de reserva por Hoteles y Restautrantes por numero de Hombres" >
+        <h:form>
+            
+            <p:dataTable value="#{datosfondo.fonSerHH}" var="tabla" editable="true">
+                        <p:column headerText="Codigo de Region">
+                            #{tabla.fonhomregion}
+                        </p:column>
+                        <p:column headerText="Region" >
+                            #{tabla.fonhomhotel}
+                        </p:column>
+                <p:column headerText="Servicio- Hotel y Restaurantes" >
+                            #{tabla.fonhomtotalr}
+                        </p:column>
+                <p:column headerText="Suma de Alquieres" >
+                            #{tabla.fonhomreservar}
+                        </p:column>
+                    </p:dataTable>
+
+        </h:form>
+            </p:panel>
+        
+         <p:panel header=" Fondos de Reserva por Servicios segun la cantidad de Mujeres" >
+        <h:form>
+            
+            <p:dataTable value="#{datosfondo.fonSerSMujeres}" var="tabla" editable="false">
+                        <p:column headerText="Codigo de Region">
+                            #{tabla.fonhomregion}
+                        </p:column>
+                        <p:column headerText="Region" >
+                            #{tabla.fonmujserv}
+                        </p:column>
+                <p:column headerText="Servicio- Hotel y Restaurantes" >
+                            #{tabla.fonmujtotals}
+                        </p:column>
+                <p:column headerText="Suma de Alquieres" >
+                            #{tabla.fonmujreservas}
+                        </p:column>
+                    </p:dataTable>
+
+        </h:form>
+            </p:panel>
+         <p:panel header=" Fondos de Reserva por Hoteles y Restaurantes por cantidad de Mujeres" >
+        <h:form>
+            
+            <p:dataTable value="#{datosfondo.fonSerHRMujer}" var="tabla" editable="false">
+                        <p:column headerText="Codigo de Region">
+                            #{tabla.fonhomregion}
+                        </p:column>
+                        <p:column headerText="Region" >
+                            #{tabla.fonmujhotel}
+                        </p:column>
+                <p:column headerText="Servicio- Hotel y Restaurantes" >
+                            #{tabla.fonhomtotalr}
+                        </p:column>
+                <p:column headerText="Suma de Alquieres" >
+                            #{tabla.fonmujreservar}
+                        </p:column>
+                    </p:dataTable>
+
+        </h:form>
+            </p:panel>
+    </h:body>
+</html>

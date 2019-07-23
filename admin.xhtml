@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <h:form>
+
+            <p:panel header="BIENVENIDO #{login.user}" >
+                <p:panelGrid columns="1" > 
+
+                    <p:menu>
+                        <p:submenu label="ADMINISTRADOR" style="red">
+                            <p:menuitem value="Consultar Publicidad" action="/consultaspublicidad"  />
+                            <p:menuitem value="Consultar Alquiler" action="/totalalquilerhot"  />
+                            <p:menuitem value="Fondos de Reserva" action="/fondoreserva"  />
+                            <p:menuitem value="consultar total mujer" action="/ConsultasUsuario"  />
+                            <p:menuitem value="consultar total hombre" action="/ConsultasUsuario"  />
+                            <p:menuitem  action="/registro" value=" Crear usuario nuevo"  />
+                            <p:menuitem action="/Bloquear_usuario" value=" Bloquear usuarios"/>
+                            <p:menuitem action="/Auditor" value=" auditoriaborrar"/>
+                            <p:menuitem action="/Encuesta" value="Realizar encuestaborrar"/>
+                            
+                            <p:menuitem action="/SemasInge" value="Semana de Ingenierias"/>
+                            <p:menuitem action="#{login.logout}" value="Logout"/>
+                        </p:submenu>
+                    </p:menu>
+
+
+                </p:panelGrid>
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
