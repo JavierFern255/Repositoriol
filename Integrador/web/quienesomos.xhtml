@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+    
+        <title>Quienes Somos</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+       
+        
+        <h:form>
+             <p:panel header="BIENVENIDO #{login.user}" ></p:panel>
+            <p:menubar>
+                        <p:menuitem action="/admin" value="Administrador"></p:menuitem>
+                         <p:menuitem action="#{login.logout}" value="Salir"></p:menuitem>            
+            </p:menubar>
+            
+             
+                        <h:form>
+    <p:outputPanel deferred="true">
+        <h3>¿Quienes sómos?</h3>
+        <p>
+Propiedad	Privado/Pública
+
+Proyecto        Proyecto Integrador de la Universidad Politécnica Salesiana	
+
+Quienes somos	Somos estudiantes de la Carrera Ingeniería en Ciencias de la Computacón de la
+                Universidad Politécnica Salesiana-Campus Sur de 5to Nivel de Carrera.
+                
+¿Qué hacemos?	Realizamos un proyecto Integrador de 3 materias que constituyen a: 
+                Software Libre, Sistemas de Información y Gestión de Base de Datos
+                El objetivo es clave: Descargarse un archivo plano de la MetaData de
+                Inec, subirlo a una base de datos a partir de ahi realizar consutas 
+                en una pagina web construida en JSF, una página en Flask que nos permitirá
+                observar Información extra de la Materia Software Libre, finalmente subir 
+                a Github cada documento realizado es decir, el proyecto.
+                
+Dirección	Av. y Av. Rumichaca Ñan, Ave Moran Valverde, Quito 170146
+
+Integrantes     Fernandez Javier, Lopez Edison y Jimenez Oscar 
+
+</p>
+    
+    </p:outputPanel>
+ 
+    <div style="height:20px"></div>
+ 
+    <p:outputPanel deferred="true" deferredMode="visible">
+        <p>
+            Proyecto        Proyecto Integrador de la Universidad Politécnica Salesiana
+        </p>
+    </p:outputPanel>
+    <div style="height:20px"></div>
+ 
+    <p:outputPanel deferred="true" deferredMode="visible">
+        <p>
+            Quienes somos	Somos estudiantes de la Carrera Ingeniería en Ciencias de la Computacón de la
+                                Universidad Politécnica Salesiana-Campus Sur de 5to Nivel de Carrera.
+        </p>
+    </p:outputPanel>
+    <div style="height:20px"></div>
+ 
+    <p:outputPanel deferred="true" deferredMode="visible">
+        <p>
+          ¿Qué hacemos?	Realizamos un proyecto Integrador de 3 materias que constituyen a: 
+                Software Libre, Sistemas de Información y Gestión de Base de Datos
+                El objetivo es clave: Descargarse un archivo plano de la MetaData de
+                Inec, subirlo a una base de datos a partir de ahi realizar consutas 
+                en una pagina web construida en JSF, una página en Flask que nos permitirá
+                observar Información extra de la Materia Software Libre, finalmente subir 
+                a Github cada documento realizado es decir, el proyecto.
+                
+        </p>
+    </p:outputPanel>
+    <div style="height:20px"></div>
+ 
+    <p:outputPanel deferred="true" deferredMode="visible">
+        <p>
+            Dirección	Av. y Av. Rumichaca Ñan, Ave Moran Valverde, Quito 170146
+        </p>
+    </p:outputPanel>
+  
+    
+    <div style="height:20px"></div>
+ 
+    <p:outputPanel deferred="true" deferredMode="visible">
+        <p>
+           Integrantes     Fernandez Javier, Lopez Edison y Jimenez Oscar. 
+        </p>
+    </p:outputPanel>
+    
+    
+    
+    
+</h:form>  
+                   
+            
+            
+            
+            </h:form> 
+            
+           
+            
+            
+        
+        <h:graphicImage value="/image/top.jpg" height="200" width="1800"/>
+       
+    </h:body>
+</html>

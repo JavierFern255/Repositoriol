@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+
+
+
+    <h:head>
+        <title>Ingenierias</title>
+    </h:head>
+    <h:body>
+
+
+        <h:form>
+
+            <p:panel header="Bienvenidoas a la semana de ingenieria" >
+                <p:panelGrid columns="3" >
+                    <h:column>
+
+                        <div class="col-sm" style="background-color: white">
+                            <img src="image/ups.png" width="550" height="100"></img>
+                        </div></h:column>
+                    <h:column><h1 align="center">Bienvenidos a la semana de ingenieria
+                        </h1></h:column>
+                    <h:column><h:commandLink  action="/login" value="Acceder cuenta"   ></h:commandLink></h:column>
+
+
+                </p:panelGrid>
+
+                <p:panelGrid columns="3" > 
+
+
+                    <h:panelGroup>
+                        <p:panel header="Datos Personales">
+                            <p:panelGrid columns="2" >
+
+
+
+                                
+
+                                Nombre:
+                                <h:inputText value ="#{datosManagedBean.data.nombre}" > </h:inputText>
+                                Curso:
+                                <h:inputText value ="#{datosManagedBean.data.curso}"> </h:inputText>
+
+                                Telefono:
+                                <h:inputSecret value ="#{datosManagedBean.data.numero}"> </h:inputSecret>
+                                correo:
+                                <h:inputText value ="#{datosManagedBean.data.correo}"> </h:inputText>
+                                Colegio:
+                                <h:inputText value ="#{datosManagedBean.data.colegio}"> </h:inputText>
+
+                            </p:panelGrid>
+                        </p:panel>
+
+                        <p:panel header="Formulario de preguntas" footer="Gracias por su visita"> 
+                            <p:panelGrid columns="2" >
+
+                                <p:dataTable  value="#{preguntaJSFManagedBean.vecp}" var="p">
+
+                                    <p:column headerText="Pregunta"  >
+                                        #{p.pregunta}
+
+
+                                    </p:column>
+                                    <p:column  >
+                                        <h:inputText value="#" ></h:inputText>
+
+
+                                    </p:column>
+                                    
+
+                                    ¿Como te enteraste del evento?
+                                   
+                                    <h:selectOneMenu value="#{registroMB.eventoenteraste}">
+                                        <f:selectItem itemValue="administrador" itemLabel="invitación ups" />
+                                        <f:selectItem itemValue="administrador" itemLabel="redes sociales" />   
+                                        <f:selectItem itemValue="administrador" itemLabel="conocido" />   
+                                    </h:selectOneMenu> 
+
+
+                                    ¿Qué te gustaria ver en 
+                                    la semana de ingenierias? 
+
+
+                                    <h:inputSecret value ="#{registroMB.semanagus}"> </h:inputSecret>
+
+                                    ¿Qué te llamó mas la antención?
+
+
+                                    <h:selectOneMenu value="#{registroMB.casabiertagustomas1}">
+                                        <f:selectItem itemValue="administrador" itemLabel="laboratorio" />
+                                        <f:selectItem itemValue="administrador" itemLabel="casa abiertas" />  
+                                        <f:selectItem itemValue="administrador" itemLabel="campus" />  
+                                        <f:selectItem itemValue="administrador" itemLabel="conferencias" />  
+                                    </h:selectOneMenu>
+
+                                    ¿Qué carrera te interesó mas? 
+                                    <h:selectOneMenu value="#{registroMB.carreainteresmas01}">
+                                        <f:selectItem itemValue="administrador" itemLabel="computacion" />
+                                        <f:selectItem itemValue="administrador" itemLabel="ambiental" />   
+
+                                    </h:selectOneMenu>
+
+
+                                    ¿En que jornada te gustaria estudiar?
+
+
+                                    <h:selectOneMenu value="#{registroMB.tegustariaes}">
+                                        <f:selectItem itemValue="administrador" itemLabel="mañana" />
+                                        <f:selectItem itemValue="administrador" itemLabel="tarde" />  
+                                        <f:selectItem itemValue="administrador" itemLabel="noche" />  
+
+                                    </h:selectOneMenu>
+                                    </p:dataTable>
+                            </p:panelGrid> 
+                            <h:commandButton   action="#{datosManagedBean.insertaEncues}" 
+                                               value="   ENVIAR    "></h:commandButton >
+                        </p:panel>
+
+
+
+
+                    </h:panelGroup>
+
+                    <div>
+                        <iframe src="https://www.google.com/maps/d/embed?mid=10nC-vMi1tzKfVjIvicvKrY_0FBm0pryh" width="1000" height="650" align="right"></iframe>
+                    </div>
+                    <p:panel >
+                        <div class="col-sm" style="background-color: black">
+                            <img src="image/salesian.jpg" class="rounded float-right" alt="Logo"
+                                 width="300" height="600"></img>
+                        </div>
+
+
+
+                    </p:panel>
+
+                </p:panelGrid>
+
+
+
+                <H1 align="center" > Direccion</H1>
+
+                <H4 align="center" >Quito CAMPUS EL GIRÓN: Av. Isabel La Católica N. 23-52 y 
+                    Madrid CAMPUS KENNEDY: Rafael Bustamante s/n CAMPUS SUR: Rumichaca 
+                    y Morán Valverde s/n Tel.:(+593) 2 3962900 3962800 svicerrectoruio@ups.edu.ec
+
+                    Este contenido ha sido publicado originalmente por Universidad Politécnica 
+                    Salesiana del Ecuador en la siguiente dirección: https://www.ups.edu.ec/. 
+                    Si está pensando en hacer uso del mismo, cite la fuente y haga un enlace 
+                    hacia la nota original donde usted ha tomado este contenido. www.ups.edu.ec</H4>
+
+            </p:panel>
+        </h:form>
+    </h:body>
+</html>
+

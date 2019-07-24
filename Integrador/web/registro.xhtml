@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form style="width:500px;">
+            <p:panel header="BIENVENIDO #{login.user}" ></p:panel>
+            <p:menubar>
+                <p:menuitem action="/admin" value="Administrador"></p:menuitem>
+                <p:menuitem action="/EventosInscritos" value="Eventos"></p:menuitem>
+                <p:menuitem action="/registro" value="Registrar"></p:menuitem>
+                <p:menuitem action="#{login.logout}" value="Salir"></p:menuitem>
+
+            </p:menubar>
+        </h:form>
+
+        <p:panel header="Registro de Usuario" >
+             <p:graphicImage name="C:/Users/USER/OneDrive/Documentos/descarga.PNG"/>
+
+
+            <h:form>
+                <p:panelGrid columns="2">
+                    Nombre:
+                    <h:inputText value ="#{registroMB.nombre}" > </h:inputText>
+                    Cedula:
+                    <h:inputText value ="#{registroMB.cedula}"> </h:inputText>
+                    Correo: 
+                    <h:inputText value ="#{registroMB.correo}"> </h:inputText>
+                    password:
+                    <h:inputSecret value ="#{registroMB.password}"> </h:inputSecret>
+                    Tipo Usuario:
+                    <h:selectOneMenu value="#{registroMB.tipo_u}">
+                        <f:selectItem itemValue="administrador" itemLabel="administrador" />
+                        <f:selectItem itemValue="visitante" itemLabel="visitante" />                   
+                    </h:selectOneMenu>
+
+                </p:panelGrid>
+                <p onclick="alert('Usuario Registrado')"> <h:commandButton  action="#{registroMB.insertar}" 
+                                                                            value="Insertar"   ></h:commandButton > </p> 
+                <h:commandButton  action="/admin" value="Refresh"   ></h:commandButton >
+
+
+
+            </h:form>
+
+             <p:panel  header="REGISTRO DE USUARIOS" >
+                 <h:form >
+
+
+                     <p:dataTable  value="#{datosManagedBean.vec}" var="tabla"
+                                 selection="#{datosManagedBean.data}"
+                                 selectionMode="single"  rowKey="#{tabla}" >
+                        <p:ajax event="rowSelect" />
+                        <p:column headerText="Seleccione">
+                            #{tabla.uid}
+                        </p:column>
+                        <p:column headerText="NOMBRE"  >
+                            <h:inputText value="#{tabla.nombre}" ></h:inputText>
+
+
+                        </p:column>
+                        <p:column headerText="CEDULA" >
+                            <h:inputText value="#{tabla.cedula}" ></h:inputText>
+
+                        </p:column>
+                        <p:column headerText="CLAVE"  >
+                            <h:inputText value="#{tabla.password}" ></h:inputText>
+
+                        </p:column >
+                        <p:column headerText="ESTADO">
+                            <h:inputText value="#{tabla.estado}" ></h:inputText>
+
+                        </p:column>
+                        <p:column headerText="CORREO" >
+                            <h:inputText value="#{tabla.correo}" ></h:inputText>
+
+                        </p:column>
+                        <p:column >
+                            <h:commandButton actionListener="#{datosManagedBean.imprimir}" value="Delete"></h:commandButton >
+                            <h:commandButton  actionListener="#{datosManagedBean.update}" value="Update"></h:commandButton>
+                        </p:column>
+                    </p:dataTable>
+
+                </h:form>
+            </p:panel>
+        </p:panel>
+    </h:body>
+</html>
+

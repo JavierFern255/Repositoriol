@@ -1,0 +1,125 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <script type="text/javascript">
+            
+            
+           </script>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+
+        <h:form>
+            <table weight='150%' border="0" cellpadding="3">
+                 <tr>    
+                <td>
+                    
+                    
+                   <p:panel header="BIENVENIDO #{login.user}" >
+                <p:panelGrid columns="1" > 
+
+                    <p:menu>
+                        <p:submenu label="ADMINISTRADOR" style="red">
+                            <p:menuitem value="Consultar Publicidad" action="/consultaspublicidad"  />
+                            <p:menuitem value="Consultar Alquiler" action="/totalalquilerhot"  />
+                            <p:menuitem value="Fondos de Reserva" action="/fondoreserva"  />
+                            <p:menuitem value="Total de Mujeres Empleadas" action="/mujer"  />
+                            <p:menuitem value="Total de Hombres Empleados" action="/hombre"  />
+                            <p:menuitem value="Total de Remuneraciones" action="/remunerar"  />
+                            <p:menuitem  action="/registro" value=" Crear usuario nuevo"  />
+                            <p:menuitem action="/Bloquear_usuario" value=" Bloquear usuarios"/>
+                            <p:menuitem action="#{login.logout}" value="Logout"/>
+                        </p:submenu>
+                    </p:menu>
+
+                </p:panelGrid>
+            </p:panel>  
+                    
+                    
+                    
+                </td>
+                <td>
+                    <h:graphicImage value="/image/HRS.jpg" />
+                </td>
+                      <td>
+                                 
+    <p:breadCrumb>
+    <p:menuitem value="Quienes Somos" url="#" />
+    <p:menuitem value="Quienes Somos" action="/quienesomos" />
+    <p:menuitem value="Detalle del Proyecto" url="#" />
+    <p:menuitem value="Buscanos (Google Maps)" url="https://www.google.com/maps/place/Universidad+Polit%C3%A9cnica+Salesiana+(Sur)/@-0.2819738,-78.551807,17z/data=!3m1!4b1!4m5!3m4!1s0x91d598bb780cdf8f:0x71cbab6b6dcb5b6a!8m2!3d-0.2819792!4d-78.5496183" />
+    <p:menuitem value="Github(Repositorio)" url="https://github.com/JavierFern255/Repositoriol" />
+    <p:menuitem value="Siguenos en Facebook" url="https://www.facebook.com/amantedeletras/" />
+    <p:menuitem value="Contactanos via Skype" url="skype:usuario_skype?call" />
+    <p:menuitem value="Universidad Politécnia Salesiana" url="https://www.ups.edu.ec/" />
+   
+</p:breadCrumb>
+                          
+                
+                       </td>
+                 </tr>
+                
+            </table>
+        </h:form>
+        <h:form>
+    <p:growl id="msgs" showDetail="true" />
+ 
+    <p:panel id="publicidad" header="Eje de Analisis Publicidad" footer="Detalles del Eje de Analisis" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <h:graphicImage value="/image/publicid.png" height="150" width="200"/>
+            <h:outputText
+                value="En este eje analizaremos los gastos que las empresas por cada Region tienen al momento de realizar un 
+                       anuncio publicitario y ver si esto afecta en cierta parte en sus ganancias y cuan impórtate 
+                       es realizar publicidad." />
+        </h:panelGrid>
+    </p:panel>
+    <p:panel id="alquiler" header="Eje de Analisis Alquiler" footer="Detalles del Eje de Analisis" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <h:graphicImage value="/image/loced.jpg" height="150" width="200"/>
+            <h:outputText
+                value="Aquí obtendremos el total de alquileres de cualquier servicio sea de Hoteles-Restaurantes
+                       o de Servicios y otros, analizaremos en que region existe un mayor aporte de alquiler a su servicio." />
+        </h:panelGrid>
+    </p:panel>
+    <p:panel id="fondoreserva" header="Eje de Analisis Fondos de Reserva" footer="Detalles del Eje de Analisis" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <h:graphicImage value="/image/reserva.jpg" height="150" width="200"/>
+            <h:outputText
+                value="Los resultados que este eje de análisis nos dará son los establecimientos que tiene un ahorro mensual
+                       en la seguridad social teniendo en cuenta, que provincia retiene mas fondos de reserva." />
+        </h:panelGrid>
+    </p:panel>
+    <p:panel id="mujer" header="Eje de Analisis Total Mujeres Empleadas" footer="Detalles del Eje de Analisis" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <h:graphicImage value="/image/mujerem.jpg" height="150" width="200"/>
+            <h:outputText
+                value="Con los datos obtenidos observaremos la cantidad de mujeres empleadas que ocupan un lugar en el ambito laboral en el país
+                       y así darnos cuenta el incremento o decremento del mismo en el ambito geografico. " />
+        </h:panelGrid>
+    </p:panel>
+    <p:panel id="hombre" header="Eje de Analisis Total Hombres Empleados" footer="Detalles del Eje de Analisis" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <h:graphicImage value="/image/hombreemp.jpg" height="150" width="200"/>
+            <h:outputText
+                value="En este campo analizaremos la tasa de empleo que tiene el hombre y con ello poder realizar una comparación con la de las 
+                       mujeres y observar si existe una desigualdad abundante o al contrario ver que ambos géneros tienen las mismas oportunidades 
+                       de empleo en el ambito geografico." />
+        </h:panelGrid>
+    </p:panel>
+    <p:panel id="remuneracio" header="Eje de Analisis Total de Remuneraciones" footer="Detalles del Eje de Analisis" style="margin-bottom:20px">
+        <h:panelGrid columns="2" cellpadding="10">
+            <h:graphicImage value="/image/rem.jpg" height="150" width="200"/>
+            <h:outputText
+                value="En este caso observaremos el total pagos que un establecimiento hace cada año y así saber cuál es el que más gratificaciones 
+                       realiza en cada ambito geografico como servicios." />
+        </h:panelGrid>
+    </p:panel>
+    
+    </h:form>
+        
+    </h:body>
+</html>

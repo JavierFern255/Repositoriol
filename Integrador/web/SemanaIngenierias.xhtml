@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Semana Ingenierias</title>
+    </h:head>
+    <h:body>
+        <h:form style="width:500px;">
+            <p:menubar>
+                <p:menuitem action="/admin" value="Administrador"></p:menuitem>
+                <p:menuitem action="/EventosInscritos" value="Eventos"></p:menuitem>
+                <p:menuitem action="/registro" value="Registrar"></p:menuitem>
+                <p:menuitem action="#{login.logout}" value="Salir"></p:menuitem>
+
+            </p:menubar>
+        </h:form>
+        Semana Ingenierias
+
+        <h:form>
+
+            <table>
+
+                <tr>
+
+                    <td> ¿Que casa abierta te gusto mas? </td>
+                    <td>
+
+                        <h:selectOneMenu value="#{registroMB.casabiertagustomas}">
+                            <f:selectItem itemValue="administrador" itemLabel="computacion" />
+                            <f:selectItem itemValue="visitante" itemLabel="civil" />                   
+                        </h:selectOneMenu>
+
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td>  ¿Que casa abierta te gusto menos? </td>
+                    <td>
+
+                        <h:selectOneMenu value="#{registroMB.casabiertagustomas}">
+                            <f:selectItem itemValue="administrador" itemLabel="computacion" />
+                            <f:selectItem itemValue="visitante" itemLabel="civil" />                   
+                        </h:selectOneMenu>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+
+                    <td> ¿Por qué te gusto mas? </td>
+                    <td>
+
+                        <h:inputSecret value ="#{registroMB.casabiertagustomenos}"> </h:inputSecret>
+                    </td>
+                </tr>
+
+
+            </table>
+
+            <br />
+            <p onclick="alert('Usuario Registrado')"> <h:commandButton  action="#{registroMB.insertar}" 
+                                                                        value="Insertar"   ></h:commandButton > </p> 
+
+
+
+
+
+
+
+
+
+
+        </h:form>
+
+    </h:body>
+</html>
+

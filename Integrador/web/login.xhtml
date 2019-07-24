@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous"></link>
+<h:head>
+	<title>login</title>
+        <a href="index.xhtml"></a>
+ 
+</h:head>
+<h:body>
+    <h:form>
+        <table weight="150%" border="0" cellpadding="1" style="text-align:center">
+            <tr>
+                <td>
+                    <h:graphicImage value="/image/ups.png" />
+                </td>
+                
+            </tr>
+        </table>  
+    </h:form> 
+    <p:panel header="Bienvenido">
+	<h:form>
+              
+		<h3>Login</h3>
+                
+               
+		<h:outputText value="Username" />
+		<p:inputText id="username" value="#{login.user}"></p:inputText>
+		<h:message for="username"></h:message>
+		<br /><br />
+		
+		<h:outputText value="Password" />
+                <h:inputSecret id="password" value="#{login.pwd}"  required="true"></h:inputSecret>
+                
+		<h:message for="password"></h:message>
+		<br /><br />
+		
+		<h:commandButton   action="#{login.validateUsernamePassword}" 
+			value="Login"></h:commandButton > 
+                
+                <br /><br />
+
+                
+             
+                
+                
+	</h:form>
+        </p:panel>
+</h:body>
+</html>

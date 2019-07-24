@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Eventos Inscritos</title>
+    </h:head>
+    <h:body>
+        <h:form style="width:500px;">
+            <p:menubar>
+                <p:menuitem action="/admin" value="Administrador"></p:menuitem>
+                <p:menuitem action="/EventosInscritos" value="Eventos"></p:menuitem>
+                <p:menuitem action="/registro" value="Registrar"></p:menuitem>
+                <p:menuitem action="#{login.logout}" value="Salir"></p:menuitem>
+
+            </p:menubar>
+        </h:form>
+        <p:panel header="Eventos Inscritos" footer="Gracias por visitarnos">
+            <h:form>
+
+
+
+                <p:panelGrid columns="2">
+                  ¿Qué carrera te intereso mas? 
+                  <h:selectOneMenu value="#{registroMB.carreainteresmas01}">
+                        <f:selectItem itemValue="administrador" itemLabel="computacion" />
+                        <f:selectItem itemValue="administrador" itemLabel="ambiental" />   
+                            
+                    </h:selectOneMenu>
+
+
+                    ¿Cuales son tus intereses? 
+
+
+                    <h:selectOneMenu value="#{registroMB.carreainteresmas}">
+                        <f:selectItem itemValue="administrador" itemLabel="robotica" />
+                        <f:selectItem itemValue="administrador" itemLabel="ambiente" />   
+                            
+                    </h:selectOneMenu>
+
+                    ¿Te gustaria estudiar?
+
+
+                    <h:selectOneMenu value="#{registroMB.tegustariaes}">
+                        <f:selectItem itemValue="administrador" itemLabel="mañana" />
+                        <f:selectItem itemValue="administrador" itemLabel="tarde" />  
+                         <f:selectItem itemValue="administrador" itemLabel="noche" />  
+                         
+                    </h:selectOneMenu>
+                </p:panelGrid>   
+
+                <p onclick="alert('Enviado')"> <h:commandButton  action="#{registroMB.insertar}" 
+                                                                            value="Insertar"   ></h:commandButton > </p> 
+            </h:form>
+        </p:panel>
+
+    </h:body>
+</html>
+

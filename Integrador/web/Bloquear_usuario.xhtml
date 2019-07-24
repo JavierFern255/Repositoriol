@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        Registro de Usuario
+        
+        <h:form>
+            
+            <table>
+                
+                <tr>
+                    
+                    <td> ID: </td>
+                    <td>
+                     
+                        <h:inputText value ="#{registroMB.uid1}"> </h:inputText>
+                         
+                    </td>
+                </tr>
+                
+                <tr>
+                    
+                    <td> cambiar estado a bloqueado: </td>
+                    <td>
+                     
+                       
+                        <h:inputText value ="#{registroMB.estado_u}"> </h:inputText>
+                         
+                    </td>
+                </tr>
+                
+             
+                
+                
+               
+                
+                
+            </table>
+            
+            <br />
+            <p onclick="alert('Usuario MODIFICADO')"> <h:commandButton  action="#{registroMB.bloquear()}" 
+			value="MODIFICAR"   ></h:commandButton > </p> 
+           
+            
+                
+                                                 
+                         
+                          
+                      
+             
+        </h:form>
+        
+    </h:body>
+</html>
+
