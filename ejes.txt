@@ -1,0 +1,22 @@
+select * from edificacion 
+select * from TotalMujeres
+
+create table TotalMujeres as 
+select des_prov,des_wgruenc, sum (etotalmuj) from edificacion group by des_prov,des_wgruenc
+create table TotalHombres as 
+select des_prov,des_wgruenc, sum (etotalhom) from edificacion group by des_prov,des_wgruenc
+
+select des_wgruenc, sum(publicid) from edificacion group by des_wgruenc
+
+select wregion,des_wregion,des_wgruenc, sum(totalq) from edificacion where des_wgruenc='SERVICIOS' group by  wregion, des_wregion,des_wgruenc
+select wregion,des_wregion,des_wgruenc, sum(totalq) from edificacion where des_wgruenc='HOTELES Y RESTAURANTES' group by  wregion, des_wregion,des_wgruenc
+
+select des_wgruenc ,des_prov, sum(totremun) from edificacion group by des_wgruenc,des_prov
+
+select des_wregion,des_wgruenc,sum(etotalmuj),sum(fonreser) from edificacion where  des_wgruenc='SERVICIOS' group by des_wregion,des_wgruenc
+select des_wregion,des_wgruenc,sum(etotalmuj),sum(fonreser) from edificacion where  des_wgruenc='HOTELES Y RESTAURANTES' group by des_wregion,des_wgruenc
+
+select des_wregion,des_wgruenc,sum(etotalhom),sum(fonreser) from edificacion where  des_wgruenc='SERVICIOS' group by des_wregion,des_wgruenc
+select des_wregion,des_wgruenc,sum(etotalhom),sum(fonreser) from edificacion where  des_wgruenc='HOTELES Y RESTAURANTES' group by des_wregion,des_wgruenc
+
+
