@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h2>{{ titulo }}</h2>
+
+<CENTER><p>BASE DE DATOS</p></CENTER>
+
+<table class="table table-hover table-dark">
+  <tr>
+    <td>
+      <center>Codigo</center>
+    </td>
+    <td>
+      <center>Time</center>
+    </td>
+    <td>
+      <center>Temperatura</center>
+    </td>
+    <td>
+      <center>Humedad</center>
+    </td>
+  </tr>
+  <tr>
+      <td>
+      {% for user in dat %}
+      <center>{{ dat[user-1] }}</center><br>
+      {% endfor %}
+      </td>
+      <td>  
+        {% for user1 in dat %}
+        <center>{{ dat1[user1-1] }}</center><br>
+        {% endfor %}
+      </td>
+      <td>
+        {% for user2 in dat %}
+        <center>{{ dat2[user2-1] }}</center><br>
+        {% endfor %}
+        </td>
+      <td>
+        {% for user3 in dat %}
+        <center>{{ dat3[user3-1] }}</center><br>
+        {% endfor %}
+        </td>
+  </tr>
+
+</table>
+
+{% endblock %}
